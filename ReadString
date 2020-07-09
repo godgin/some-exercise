@@ -1,0 +1,70 @@
+package forStudy;
+import java.util.Scanner;
+
+public class readString {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s = sc.next();
+		char[] a = s.toCharArray();
+		pri(a);
+	}
+	public static void pri(char[] a) {
+		if(a[a.length-2]=='.') {
+		int w = a.length-2;
+		for(int i=0;i<w;i++) {
+			if((w-i)%4==0) {
+				System.out.print(a[i]);
+				System.out.print('千');}
+			if((w-i)%4==3) {
+				System.out.print(a[i]);
+				System.out.print('百');}
+			if((w-i)%4==2) {
+				System.out.print(a[i]);
+				System.out.print('十');}
+			if((w-i)%4==1) {
+				if(w-i==1) {
+					System.out.print(a[i]);
+					System.out.print('块');}
+				if(w-i==5) {
+					System.out.print(a[i]);
+					System.out.print('万');}
+				if(w-i==9) {
+					System.out.print(a[i]);
+					System.out.print('亿');}
+			}
+		}
+		System.out.print(a[w-1]);
+		System.out.print('角');
+	}
+		if(a[a.length-3]=='.') {
+			int w = a.length-3;
+			for(int i=0;i<w;i++) {
+				if((w-i)%4==0) {
+					System.out.print(a[i]);
+					System.out.print('千');}
+				if((w-i)%4==3) {
+					System.out.print(a[i]);
+					System.out.print('百');}
+				if((w-i)%4==2) {
+					System.out.print(a[i]);
+					System.out.print('十');}
+				if((w-i)%4==1) {
+					if(w-i==1) {
+						System.out.print(a[i]);
+						System.out.print('块');}
+					if(w-i==5) {
+						System.out.print(a[i]);
+						System.out.print('万');}
+					if(w-i==9) {
+						System.out.print(a[i]);
+						System.out.print('亿');}
+				}
+			}
+			System.out.print(a[w-2]);
+			System.out.print('角');
+			System.out.print(a[w-1]);
+			System.out.print('分');
+		}
+			
+	}
+}
