@@ -1,0 +1,43 @@
+import java.util.Scanner;
+//给定任意一个大于0数字，找到数字重新排列后大于它的下一个数字。
+//例如：1223进行重新排列后，下一个比它大的数字是1232。1232的下一个是1322
+public class txsz {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("请输入一个大于0的数字：");
+		int n = sc.nextInt();
+		choose(n);
+	}
+	static void choose(int n) {
+		String s = String.valueOf(n);
+		char[] ch = s.toCharArray();
+		int x = ch.length-1;
+		int flag = 0;
+		int y = 0;
+		while(flag == 0 ) {
+			if(ch[x-1]<ch[x]) {
+				swap(x,x-1,ch);
+				flag = 1;
+			}
+			else {
+				
+				x--;
+				y++;
+			}
+		}
+		for(int j=ch.length-1-y;j<ch.length-1;j++) {
+			if(ch[j]>ch[j+1])
+				swap(j, j+1, ch);
+		}
+		
+		for(int i=0;i<ch.length;i++) {
+			System.out.print(ch[i]);
+		}
+	}
+	static void swap(int x,int y,char[] ch) {
+		char temp;
+		temp = ch[x];
+		ch[x] = ch[y];
+		ch[y] = temp;
+	}
+}
