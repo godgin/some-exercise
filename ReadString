@@ -1,4 +1,3 @@
-package forStudy;
 import java.util.Scanner;
 
 public class readString {
