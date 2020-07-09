@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+
+//给定任意一个字符串，打印出所有的排列组合。例如："abb"所有排列组合，一共有3个，"abb" "bab" "bba"
+public class plzh {
+	public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	System.out.print("请输入一个字符串：");
+	String str = s.next();
+	char[] ch = str.toCharArray();
+	
+
+	swapout(ch,ch[0],ch[ch.length-1]);
+	
+	}
+	static void swapout(char[] ch,char x,char y) {
+		
+
+		for(int j=0;j<ch.length-1;j++) {
+			swap(j,j+1,ch);
+			
+		}
+	
+			swap(ch.length-1, 0, ch);
+			if(ch[0] == x && ch[ch.length-1] == y) {
+				
+				return;
+			}
+		
+		swapout(ch,x,y);
+		
+	}
+	static void swap(int x,int y,char[] ch) {
+		char temp;
+		temp = ch[x];
+		ch[x] = ch[y];
+		ch[y] = temp;
+		if(ch[x]!=ch[y]) {
+		for(int i = 0;i<ch.length;i++) {
+				System.out.print(ch[i]);
+				}
+			System.out.println();
+	}
+	}
+}
+
